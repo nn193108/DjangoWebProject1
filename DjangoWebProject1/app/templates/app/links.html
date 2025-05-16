@@ -1,0 +1,31 @@
+{% extends 'app/layout.html' %}
+{% load static %}  <!-- Исправлено с staticfiles на static -->
+{% block content %}
+<div class="container">
+    <h2>Полезные ресурсы</h2>
+    <p>Наши партнеры и полезные сайты о кошках:</p>
+
+    <div class="row resources">
+        <div class="col-md-4">
+            <a href="https://daylapu.ru.com/" target="_blank" class="resource-link">
+                <img src="{% static 'app/content/карт1.png' %}" alt="Логотип Daylapu" class="img-fluid resource-img" />
+                <p class="resource-title">Daylapu - помощь кошкам</p>
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a href="https://pets1.ru/khanty-mansia/surgut/priyut/" target="_blank" class="resource-link">
+                <img src="{% static 'app/content/карт2.png' %}" alt="Логотип приюта" class="img-fluid resource-img" />
+                <p class="resource-title">Приют для животных в Сургуте</p>
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a href="https://daylapu-help.ru/" target="_blank" class="resource-link">
+                <img src="{% static 'app/content/карт1.png' %}" alt="Логотип Daylapu Help" class="img-fluid resource-img" />
+                <p class="resource-title">Daylapu Help - волонтеры</p>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

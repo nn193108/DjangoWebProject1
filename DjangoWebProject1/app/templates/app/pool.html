@@ -1,0 +1,195 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}</h2>
+<h3>{{ message }}</h3>
+
+{% if form != None %}
+<div class="row">
+    <div class="col-md-8">
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="form-group mt-3">
+                {{ form.name.label_tag }}
+                {{ form.name }}
+                {% if form.name.errors %}
+                <div class="alert alert-danger">
+                    {{ form.name.errors }}
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="form-group mt-3">
+                {{ form.email.label_tag }}
+                {{ form.email }}
+                {% if form.email.errors %}
+                <div class="alert alert-danger">
+                    {{ form.email.errors }}
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="form-group mt-3">
+                {{ form.site_rating.label_tag }}
+                <div>
+                    {{ form.site_rating }}
+                </div>
+                {% if form.site_rating.errors %}
+                <div class="alert alert-danger">
+                    {{ form.site_rating.errors }}
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="form-group mt-3">
+                {{ form.visit_frequency.label_tag }}
+                {{ form.visit_frequency }}
+                {% if form.visit_frequency.errors %}
+                <div class="alert alert-danger">
+                    {{ form.visit_frequency.errors }}
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="form-group mt-3">
+                {{ form.age.label_tag }}
+                {{ form.age }}
+                {% if form.age.errors %}
+                <div class="alert alert-danger">
+                    {{ form.age.errors }}
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="form-group mt-3">
+                {{ form.improvements.label_tag }}
+                <div>
+                    {{ form.improvements }}
+                </div>
+                {% if form.improvements.errors %}
+                <div class="alert alert-danger">
+                    {{ form.improvements.errors }}
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="form-group mt-3">
+                {{ form.message.label_tag }}
+                {{ form.message }}
+                {% if form.message.errors %}
+                <div class="alert alert-danger">
+                    {{ form.message.errors }}
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="form-check mt-3">
+                {{ form.accept_terms }}
+                {{ form.accept_terms.label_tag }}
+                {% if form.accept_terms.errors %}
+                <div class="alert alert-danger">
+                    {{ form.accept_terms.errors }}
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="form-group mt-4">
+                <button type="submit" class="btn btn-primary" id="submit_button">Отправить</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        // Более надежное сохранение оригинальных стилей
+        var $submitButton = $('#submit_button');
+        var originalButtonColor = $submitButton.css('color') || '#000';
+
+        var $nameInput = $('#id_name');
+        var originalInputBgColor = $nameInput.css('background-color') || '#fff';
+
+        // Эффекты для кнопки
+        $submitButton.hover(
+            function () {
+                $(this).css('color', 'red');
+            },
+            function () {
+                $(this).css('color', originalButtonColor);
+            }
+        );
+
+        // Эффекты для полей формы с делегированием
+        $(document)
+            .on('focus', 'input, textarea, select', function () {
+                $(this).css('background-color', 'lightyellow');
+            })
+            .on('blur', 'input, textarea, select', function () {
+                $(this).css('background-color', originalInputBgColor);
+            });
+    });
+</script>
+{% else %}
+<div class="alert alert-success">
+    <h4>Спасибо за ваш отзыв!</h4>
+    <p>Мы ценим ваше мнение и обязательно учтем его в нашей работе.</p>
+</div>
+
+<div class="card mt-4">
+    <div class="card-header">
+        <h5>Данные вашего отзыва:</h5>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <tr>
+                <th>Имя:</th>
+                <td>{{ data.name }}</td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td>{{ data.email }}</td>
+            </tr>
+            <tr>
+                <th>Оценка сайта:</th>
+                <td>{{ data.site_rating_display }}</td>
+            </tr>
+            <tr>
+                <th>Частота посещений:</th>
+                <td>{{ data.visit_frequency_display }}</td>
+            </tr>
+            {% if data.age %}
+            <tr>
+                <th>Возраст:</th>
+                <td>{{ data.age }}</td>
+            </tr>
+            {% endif %}
+            {% if data.improvements_display %}
+            <tr>
+                <th>Желаемые улучшения:</th>
+                <td>
+                    <ul>
+                        {% for improvement in data.improvements_display %}
+                        <li>{{ improvement }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            {% endif %}
+            {% if data.message %}
+            <tr>
+                <th>Комментарий:</th>
+                <td>{{ data.message }}</td>
+            </tr>
+            {% endif %}
+        </table>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a href="{% url 'pool' %}" class="btn btn-primary">Отправить еще один отзыв</a>
+</div>
+{% endif %}
+
+{% endblock %}

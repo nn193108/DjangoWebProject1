@@ -1,0 +1,46 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>{{ post.title }}</h2>
+        <p class="date">{{ post.posted|date:"d.m.Y" }}</p>
+        {% if post.image %}
+            <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-responsive">
+        {% endif %}
+        <div class="content">
+            {{ post.content|linebreaks }}
+        </div>
+        <a href="{% url 'blog' %}" class="btn btn-default">Назад</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Комментарии</h3>
+        {% if user.is_authenticated %}
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Добавить комментарий</button>
+            </form>
+        {% else %}
+            <p>Для добавления комментария необходимо <a href="{% url 'login' %}">войти</a>.</p>
+        {% endif %}
+        
+        {% if comments %}
+            {% for comment in comments %}
+                <div class="comment">
+                    <h5>{{ comment.author }}</h5>
+                    <p class="date">{{ comment.date|date:"d.m.Y H:i" }}</p>
+                    <p>{{ comment.text|linebreaks }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Комментариев пока нет.</p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %} 

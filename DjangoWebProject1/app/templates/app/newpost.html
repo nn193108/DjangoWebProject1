@@ -1,0 +1,26 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<h2>Добавление статьи блога</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+        {{ form.title.label_tag }}
+        {{ form.title }}
+    </div>
+    <div class="form-group">
+        {{ form.description.label_tag }}
+        {{ form.description }}
+    </div>
+    <div class="form-group">
+        {{ form.content.label_tag }}
+        {{ form.content }}
+    </div>
+    <div class="form-group">
+        {{ form.image.label_tag }}
+        {{ form.image }}
+    </div>
+    <button type="submit" class="btn btn-primary">Опубликовать</button>
+</form>
+{% endblock %} 

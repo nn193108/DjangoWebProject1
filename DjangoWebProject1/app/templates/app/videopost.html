@@ -1,0 +1,43 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}</h2>
+<p><em>Видео</em></p>
+
+<div class="video-container">
+    <video width="100%" controls>
+        <source src="/media/blog/видеокот1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<div class="comments-section">
+    <h3>Комментарии</h3>
+    
+    {% if user.is_authenticated %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Отправить комментарий</button>
+        </form>
+    {% else %}
+        <p>Пожалуйста, <a href="{% url 'login' %}">войдите</a> чтобы оставить комментарий.</p>
+    {% endif %}
+
+    <div class="comments-list">
+        {% if comments %}
+            {% for comment in comments %}
+                <div class="comment">
+                    <h5>{{ comment.author.username }}</h5>
+                    <p class="comment-date">{{ comment.date|date:"d.m.Y H:i" }}</p>
+                    <p class="comment-text">{{ comment.text }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Пока нет комментариев.</p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %} 
