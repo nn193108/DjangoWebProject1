@@ -1,137 +1,223 @@
-:root {
-    --primary-color: #ff6b6b; /* Теплый коралловый */
-    --secondary-color: #4ecdc4; /* Мятный */
-    --accent-color: #ffe66d; /* Солнечный желтый */
-    --dark-color: #292f36; /* Темно-синий */
-    --light-color: #f7fff7; /* Светлый кремовый */
-    --background-color: #f8f4f9; /* Очень светлый лиловый */
-    --text-color: #333333;
-    --text-light: #6c757d;
-    --border-radius: 12px;
-    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s ease;
-}
-
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 body {
-    padding-top: 70px;
-    padding-bottom: 40px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.6;
+    padding-top: 50px; /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    padding-bottom: 20px; /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 }
 
-/* Основной контейнер */
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 .body-content {
-    padding-left: 20px;
-    padding-right: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding-left: 15px; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+    padding-right: 15px;
 }
 
-/* Стили для форм */
+#myCarousel .item {
+    height: 300px;
+}
+
+#myCarousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
 input,
 select,
 textarea {
-    max-width: 100%;
-    width: 100%;
-    padding: 12px 15px;
-    margin-bottom: 15px;
-    border: 2px solid #ddd;
-    border-radius: var(--border-radius);
-    font-size: 16px;
-    transition: var(--transition);
-    background-color: white;
+    max-width: 280px; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+    padding: 8px 12px; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    border: 1px solid #ddd; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    border-radius: 4px; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 }
 
+    /* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
     input:focus,
     select:focus,
     textarea:focus {
-        border-color: var(--secondary-color);
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.2);
-        background-color: #fffaf0;
+        border-color: #66afe9; /* пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+        outline: none; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ outline */
+        box-shadow: 0 0 8px rgba(102, 175, 233, 0.6); /* пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
     }
 
-    /* Кнопки */
-    button,
-    input[type="submit"],
-    input[type="button"] {
-        background-color: var(--primary-color);
-        color: white;
-        border: none;
-        padding: 12px 25px;
-        border-radius: var(--border-radius);
-        cursor: pointer;
-        font-size: 16px;
-        font-weight: 600;
-        transition: var(--transition);
-        box-shadow: var(--box-shadow);
+/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+.btn-primary {
+    background-color: #337ab7; /* пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ */
+    border-color: #2e6da4; /* пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    padding: 8px 16px; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    font-size: 14px; /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
+    font-weight: 600; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
+    transition: color 0.3s ease, background-color 0.3s ease; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+}
+
+    /* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    .btn-primary:hover {
+        background-color: #286090; /* пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ */
+        border-color: #204d74; /* пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
     }
 
-        button:hover,
-        input[type="submit"]:hover,
-        input[type="button"]:hover {
-            background-color: #ff5252;
-            transform: translateY(-2px);
-        }
-
-/* Стили для валидации */
+/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 .field-validation-error {
-    color: #dc3545;
-    font-size: 14px;
-    display: block;
-    margin-top: -10px;
-    margin-bottom: 15px;
+    color: #b94a48; /* пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
+    font-size: 14px; /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
+    margin-top: 5px; /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
+    display: block; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 }
 
-.input-validation-error {
-    border-color: #dc3545 !important;
-    background-color: #fff3f3 !important;
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ */
+.field-validation-valid {
+    display: none;
 }
 
+/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+input.input-validation-error {
+    border: 1px solid #b94a48; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+}
+
+/* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
 .validation-summary-errors {
-    color: #dc3545;
-    background-color: #fff3f3;
-    padding: 15px;
-    border-radius: var(--border-radius);
-    margin-bottom: 20px;
-    border-left: 4px solid #dc3545;
+    color: #b94a48; /* пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
+    padding: 15px; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    margin-bottom: 20px; /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+    border: 1px solid #ebccd1; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    border-radius: 4px; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ */
+    background-color: #f2dede; /* пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ */
 }
 
-/* Анимации */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
+.validation-summary-valid {
+    display: none;
 }
 
-/* Кастомные элементы для котокафе */
-.cat-theme-element {
-    background-color: var(--accent-color);
-    border-radius: var(--border-radius);
-    padding: 15px;
-    margin-bottom: 20px;
-    box-shadow: var(--box-shadow);
-    animation: fadeIn 0.5s ease-out;
+/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px; /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
 }
 
-/* Адаптивность */
-@media (min-width: 768px) {
-    .body-content {
-        padding-left: 40px;
-        padding-right: 40px;
+/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+.form-group {
+    margin-bottom: 20px; /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+}
+
+/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+label {
+    font-weight: 600; /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+    margin-bottom: 8px; /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+    display: block; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+}
+
+/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+.alert-success {
+    background-color: #dff0d8; /* пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ */
+    border-color: #d6e9c6; /* пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    color: #3c763d; /* пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
+    padding: 15px; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    border-radius: 4px; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ */
+    margin-bottom: 20px; /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+}
+
+/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+.card {
+    border: 1px solid #ddd; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    border-radius: 4px; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ */
+    margin-bottom: 20px; /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* пїЅпїЅпїЅпїЅ */
+}
+
+/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+.card-header {
+    background-color: #f5f5f5; /* пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ */
+    padding: 10px 15px; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    border-bottom: 1px solid #ddd; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+}
+
+/* пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+.card-body {
+    padding: 15px; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+}
+
+/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+.table {
+    width: 100%; /* пїЅпїЅпїЅпїЅпїЅпїЅ 100% */
+    margin-bottom: 20px; /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+}
+
+    /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    .table th, .table td {
+        padding: 8px; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+        vertical-align: top; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+        border-top: 1px solid #ddd; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
     }
 
+    /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    .table th {
+        font-weight: 600; /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+        text-align: left; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ */
+        width: 30%; /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    }
+
+/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ JavaScript пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+#submit_button {
+    transition: color 0.3s ease; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+}
+
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+@media (max-width: 768px) {
     input,
     select,
     textarea {
-        max-width: 400px;
+        max-width: 100%; /* пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
     }
+
+    .table th, .table td {
+        display: block; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+        width: 100%; /* пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
+    }
+
+    .table th {
+        padding-bottom: 0; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+    }
+}
+
+/* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ) */
+.resources {
+    margin: 30px 0; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    text-align: center; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
+}
+
+.resource-link {
+    display: block; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    margin-bottom: 20px; /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+    text-decoration: none; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    color: #333; /* пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
+    transition: all 0.3s ease; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+}
+
+    .resource-link:hover {
+        transform: translateY(-5px); /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+        color: #ff6b6b; /* пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    }
+
+.resource-img {
+    max-height: 150px; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
+    width: auto; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
+    border-radius: 10px; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* пїЅпїЅпїЅпїЅ */
+    margin-bottom: 10px; /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+}
+
+.resource-title {
+    font-weight: 600; /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+    margin-top: 10px; /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
+}
+
+.comment h5 {
+    color: aqua !important;
 }
